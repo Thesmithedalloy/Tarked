@@ -10,6 +10,7 @@
     "pretty": "prettier --write ."
   },
   "dependencies": {
+    "type": "module",
     "@solid-primitives/script-loader": "^2.0.2",
     "@solidjs/meta": "^0.28.0",
     "@solidjs/router": "^0.8.2",
