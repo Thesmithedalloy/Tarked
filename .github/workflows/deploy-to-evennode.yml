@@ -1,5 +1,5 @@
 # This workflow will automatically deploy your application to www.evennodom on push to main branch.
-- name: Install dependencies
+name: Install dependencies
   run: npm install
 name: Deploy to EvenNode
 
