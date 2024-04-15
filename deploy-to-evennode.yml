@@ -50,5 +50,5 @@ eszLOX0D91nK0LWlEtvDB4bwfSctePdBfAuM7yQvIv3aHKtiK9dS2W1uwFFuV2ta
       run: |
         git remote add evennode ${{ git@git.evennode.com:1b8cc12dc888f1e3c2a3862833e1b712.git }}
         git config --global user.email "${{ 903054@lcps.org }}"
-        git config --global user.name "${{ turtles_68ace }}"
+        git config --global user.name "${{ turtles.us-3.evennode.com }}"
         git push evennode +main
