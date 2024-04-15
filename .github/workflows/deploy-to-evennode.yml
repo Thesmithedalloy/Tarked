@@ -25,6 +25,6 @@ jobs:
     - name: Deploy to evennode.com
       run: |
         git remote add evennode git@git.evennode.com:1b8cc12dc888f1e3c2a3862833e1b712.git
-        git config --global user.email 903054@lcps.org 
+        git config --global user.email smithcriag14@gmail.com
         git config --global user.name Louis654
         git push evennode +main
