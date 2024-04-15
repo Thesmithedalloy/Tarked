@@ -4,7 +4,7 @@ name: Deploy to EvenNode
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   Deploy:
@@ -27,4 +27,4 @@ jobs:
         git remote add evennode ${{ secrets.EVENNODE_REPO_URL }}
         git config --global user.email "${{ secrets.GIT_EMAIL }}"
         git config --global user.name "${{ secrets.GIT_NAME }}"
-        git push evennode +main
+        git push evennode +master
