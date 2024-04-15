@@ -1,0 +1,54 @@
+# This workflow will automatically deploy your application to www.evennode.com on push to main branchs
+
+name: Deploy to EvenNode
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ MIIEogIBAAKCAQEAj0MXFrGIxuH/wrvzFxbLkVVfdZUSHcA3TsuXz6AtD1rMz6ma
+lUc2925/Ylz/CMirt+jS92bEHZqG8ZI/AfWNQqlMYPjOAf8zmAjj32Q+mN3uM+gG
+XqzEanVG4r0XBZvoXuHgAoqGbHwFlPLLFpE0Gi45nu9/6cefOMsYk0OGM8dEHCRg
+BTle3IjzFDpVgQJGLkCOvoyW73HZISSkrPkzO0ezsZwuYDJjMAjg8oo7NFfWeVht
+l1Nzt5lI10L7hfQAiXrr1bAqCZ14ln2yVTWWqilXrWtl5fpZ0etZxKD+omGfXGy9
+DpX11BHcBXlxi0et2PifeJx2ojR9Gk9dKUPDxwIDAQABAoIBABMzmtSf1wVRJUak
+imB93asNFk5cPKFgMgmNoDtj7KYyNWFgCigX83YWiVxVupkizGFKA3zFeWO+Ynfe
+cjOBBf35UxNsRbBe1Dt8dY5rkThMBrFOWAw4e9sI/QdG8N7/lpWhELVGe93ugZEF
+OdM8gw8/Qtnan/pllyG1lwWl90bZKyGLLlGro5NnmzFKDOyDu/14hPj6+8jFUYVQ
+tYK3k54rYsSjIwPqFmCfJuCwIdQ5PBvgN7Qv9Q+cVD69LBgimdpk/o+XMPvnBDzV
+LXrUoYsrNxuLHazF6YGIRofWwvK1ilW0FsZQF2/XNKNg6RxE6KuiWqny1WRZugbv
+ZMKUOAECgYEAwE4DJg3yi1135D1SSxN7cbGgNT8wUWr4EXh9xYeF6xqFa+RtAXlX
+xchuvVPKqoMXudCL2LC9+3IMEMEXGbJZNNF8QnZ5C2BgJsHpNQ/oiFaClttgHAzP
+7ig/wvgXLVrNkzGu8c+EW4oibv5+rRKcKCqsNo7ct+YEmjefccYDhAcCgYEAvrah
+dq1PiHMVS6p0cyeP6ICxELXrSZrTefFUfKgZkSuDTWV+OUlUBRP5C9fmMefzoPC3
+fmPLwfXF/uAJ/h3I5toRhN3hxQp2q7btuAZJ5cOojVSLQMI2XIYt6zJFbEhDdp9c
+59qdF7njK+cb+i2nLndrd/FIZBAlrMZvOpoDUkECgYAZQuY0/IYM+qVCLS//Prrr
+j3rNI9TUDSozGVHkPc5AuQYnyyTqmacHCzJI2pX32iqmtRd5ypXaTvv4w3SmYoBH
+aPFaxbdW4D0hOj3JQ6K3Li4PZRf191TlIxJlKTPaOGBi4pbpmun3IGkvjWzUjWpH
++HsQ26lw2t1l6MKgLnPNxwKBgHfMoYC7PcqpACeX2666m1uh+5hTrol+CHoBbuEf
+d3AJtWFY8AFsXqsR8M/Pv3p6CkB+9cUfS0974/RHJ//JFfpt4bNk7f2opQMY1htT
+V/hNAARHp3H2jc9xOkcUPSfX/Qj28pVyblwJGPrrIlf1dZ9qxMeDecXhnsj5ncVi
+GdQBAoGAZM2NMmeNB5d6DJachWRRdmLFV9w1q/X0kVLug69TCBLFGngsfHorAa+X
+eszLOX0D91nK0LWlEtvDB4bwfSctePdBfAuM7yQvIv3aHKtiK9dS2W1uwFFuV2ta
+7EHqQT56UMcI6CEIeQrAMvjnF90sHyJM0oE/AXR52lsQXxYlvDs= }}
+        known_hosts: " "
+    - name: Add git.evennode.com to known_hosts
+      run: |
+        ssh-keyscan -H git.evennode.com > ~/.ssh/known_hosts
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Deploy to evennode.com
+      run: |
+        git remote add evennode ${{ git@git.evennode.com:1b8cc12dc888f1e3c2a3862833e1b712.git }}
+        git config --global user.email "${{ 903054@lcps.org }}"
+        git config --global user.name "${{ turtles.us-3.evennode.com }}"
+        git push evennode +main
