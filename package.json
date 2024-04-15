@@ -10,7 +10,6 @@
     "stat": "webpack --profile",
     "pretty": "prettier --write ."
   },
-  },
   "dependencies": {
     "@solid-primitives/script-loader": "^2.0.2",
     "@solidjs/meta": "^0.28.0",
