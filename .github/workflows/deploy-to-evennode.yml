@@ -14,7 +14,7 @@ jobs:
     - name: Install SSH key
       uses: shimataro/ssh-key-action@v2
       with:
-        key: AAAAB3NzaC1yc2EAAAADAQABAAABgQDDU6BOo1Py4KqyU5ABymhkIP58RXPQaK4E1XqiaHhjeZiAJKKCjGkdAL7+vI25LzGPnCMV8ArJ/mn9MqkffZzsxv2siJkqc9DdGqrzozOthFPNXGEh5NIm/i/1jL/fK8MY6ESwxF263XLc8naqjW1rWDwXLYYgzpNkxpo4jZa5qMBNW0xH4ZTo1BofyRBbjO2m8WRTXdkXKSDSotKg8PXpPk+3QEWxA2RWtXweEeCEtvRkRzUWMselX+CVHHirRnavOSgiTHLapoVAad5rpcV8bu8sfe/qVBciI9kRnq2nNC7ThJSzooUdjWyIlMAH/kOo2lhtA0zXI76EkJNPtqN2S+lLbefngSURXC19fI2dhXJ88TsGy4npZvk3TgvUyG7/sXs9GkCVwUW0JNqi1gd6Ql8SEGJI9sGk7xy0ZAJiBRjEVwGh+rAqQJ3D29hS1jOK9IJAeWNC4wADK56Asga9HlXzkLqtDWgogeG+PD8JzDuXla2DayAjJC29qp4Je70= 903054@lcps.org
+        key: AAAAB3NzaC1yc2EAAAADAQABAAABgQDDU6BOo1Py4KqyU5ABymhkIP58RXPQaK4E1XqiaHhjeZiAJKKCjGkdAL7+vI25LzGPnCMV8ArJ/mn9MqkffZzsxv2siJkqc9DdGqrzozOthFPNXGEh5NIm/i/1jL/fK8MY6ESwxF263XLc8naqjW1rWDwXLYYgzpNkxpo4jZa5qMBNW0xH4ZTo1BofyRBbjO2m8WRTXdkXKSDSotKg8PXpPk+3QEWxA2RWtXweEeCEtvRkRzUWMselX+CVHHirRnavOSgiTHLapoVAad5rpcV8bu8sfe/qVBciI9kRnq2nNC7ThJSzooUdjWyIlMAH/kOo2lhtA0zXI76EkJNPtqN2S+lLbefngSURXC19fI2dhXJ88TsGy4npZvk3TgvUyG7/sXs9GkCVwUW0JNqi1gd6Ql8SEGJI9sGk7xy0ZAJiBRjEVwGh+rAqQJ3D29hS1jOK9IJAeWNC4wADK56Asga9HlXzkLqtDWgogeG+PD8JzDuXla2DayAjJC29qp4Je70=
         known_hosts: " "
     - name: Add git.evennode.com to known_hosts
       run: |
