@@ -14,7 +14,7 @@ jobs:
     - name: Install SSH key
       uses: shimataro/ssh-key-action@v2
       with:
-        key: ${{ AAAAB3NzaC1yc2EAAAADAQABAAABAQCPQxcWsYjG4f/Cu/MXFsuRVV91lRIdwDdOy5fPoC0PWszPqZqVRzb3bn9iXP8IyKu36NL3ZsQdmobxkj8B9Y1CqUxg+M4B/zOYCOPfZD6Y3e4z6AZerMRqdUbivRcFm+he4eACioZsfAWU8ssWkTQaLjme73/px584yxiTQ4Yzx0QcJGAFOV7ciPMUOlWBAkYuQI6+jJbvcdkhJKSs+TM7R7OxnC5gMmMwCODyijs0V9Z5WG2XU3O3mUjXQvuF9ACJeuvVsCoJnXiWfbJVNZaqKVeta2Xl+lnR61nEoP6iYZ9cbL0OlfXUEdwFeXGLR63Y+J94nHaiNH0aT10pQ8PH  }}
+        key: {{ AAAAB3NzaC1yc2EAAAADAQABAAABAQCPQxcWsYjG4f/Cu/MXFsuRVV91lRIdwDdOy5fPoC0PWszPqZqVRzb3bn9iXP8IyKu36NL3ZsQdmobxkj8B9Y1CqUxg+M4B/zOYCOPfZD6Y3e4z6AZerMRqdUbivRcFm+he4eACioZsfAWU8ssWkTQaLjme73/px584yxiTQ4Yzx0QcJGAFOV7ciPMUOlWBAkYuQI6+jJbvcdkhJKSs+TM7R7OxnC5gMmMwCODyijs0V9Z5WG2XU3O3mUjXQvuF9ACJeuvVsCoJnXiWfbJVNZaqKVeta2Xl+lnR61nEoP6iYZ9cbL0OlfXUEdwFeXGLR63Y+J94nHaiNH0aT10pQ8PH  }}
         known_hosts: " "
     - name: Add git.evennode.com to known_hosts
       run: |
@@ -24,7 +24,7 @@ jobs:
         fetch-depth: 0
     - name: Deploy to evennode.com
       run: |
-        git remote add evennode ${{ git@git.evennode.com:1b8cc12dc888f1e3c2a3862833e1b712.git }}
-        git config --global user.email "${{ 903054@lcps.org }}"
-        git config --global user.name "${{ turtles.us-3.evennode.com }}"
+        git remote add evennode {{ git@git.evennode.com:1b8cc12dc888f1e3c2a3862833e1b712.git }}
+        git config --global user.email "{{ 903054@lcps.org }}"
+        git config --global user.name "{{ turtles.us-3.evennode.com }}"
         git push evennode +main
